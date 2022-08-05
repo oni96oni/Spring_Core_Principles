@@ -52,3 +52,29 @@
         어떤연관???
 
     스프링 빈 조회 - 상속 관계★
+        부모 타입으로 조회하면 자식 타입도 함께 조회된다.
+        실제 빈을 조회하는 경우는 거의없다 실무에서 알려준 이유는  자동의존관계 주입에서 이해를 위해서
+
+    BeanFactory와 ApplicationContext
+        둘다 인터페이스
+
+        여러 부가기능까지 다모아놓은게 ApplicationContext 인터페이스
+
+        이걸 상속받아서 구현해놓은것이 AnnotationConfigApplicationContext
+
+    다양한 설정 형식 지원 - 자바코드, xml
+        xml이라는 문서도 사용가능
+        요즘은 자바코드로 사용하는게 많다(AnnotationConfigApplicationContext)
+        xml기반의 appConfig.xml과 AppConfig.java 설정 정보는 거의 비슷하다.
+
+    스프링 빈 설정 메타 정보 - BeanDefinition
+        어떻게 다양한 설정 형식을 지원할까? 바로 BeanDefinition이 라는 추상화가 있기때문!
+        xml을 읽든 자바코드를 읽든 BeanDefinition을 만들면된다.
+        스프링 컨테이너는 오직 BeanDefinition만 알면 된다.(추상화에만 의존한다)
+
+        각각의 설정 형식을 읽어주는 Reader가 있다. 그것들이 설정파일을 읽어서 BeanDefinition을 만들어주는것
+        직접 스프링 빈을 등록하는 방법 과 우회해서하는방법(팩토리메서드) 쓰는 방법 -> 기존의 AppConfig 썻던방식(팩토리빈방식)
+
+
+
+
