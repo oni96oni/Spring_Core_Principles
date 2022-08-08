@@ -4,7 +4,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
 import java.util.Map;
-@Component
+@Component // 첫글자가 소문자로 바뀐 memoryMemberRepository가 스프링 컨테이너에 이름으로 등록 된다.
 public class MemoryMemberRepository implements MemberRepository {
 
     private static Map<Long, Member> store = new HashMap<>();
